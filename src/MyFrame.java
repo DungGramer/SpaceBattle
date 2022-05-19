@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 public class MyFrame extends JFrame {
 
-    GraphicsDevice gd = GraphicsEnvironment                                                                             //set size mặc định của màn hình
+    GraphicsDevice gd = GraphicsEnvironment                                                                             // set size default
             .getLocalGraphicsEnvironment().getDefaultScreenDevice();
     static int W_FRAME;
     static int H_FRAME;
