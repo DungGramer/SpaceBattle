@@ -70,7 +70,7 @@ public class GameManager {
             }
             for (int j = 0; j < arrBullet.size(); j++) {
                 Rectangle rect = arrEnemy.get(i).getRect().intersection(arrBullet.get(j).getRect());
-                if (rect.isEmpty() == false) {                                                                          //Giết enemy
+                if (rect.isEmpty() == false) {                                                                          // Kill enemy
                     arrEnemy.remove(i);
                     arrBullet.remove(j);
                     plane.score += 50;
@@ -80,19 +80,19 @@ public class GameManager {
             }
         }
         for (int i = arrMoney.size() - 1; i >= 0; i--) {
-            boolean check = arrMoney.get(i).move();                                                                     //Xoá xu ngoài tầm
+            boolean check = arrMoney.get(i).move();                                                                     // Remove money outside viewable
             if (check == true) {
                 arrMoney.remove(i);
             } else {
                 Rectangle rect = arrMoney.get(i).getRect().intersection(plane.getRect());
-                if (rect.isEmpty() == false) {                                                                          //Nhặt xu
+                if (rect.isEmpty() == false) {                                                                          // Earn Money
                     arrMoney.remove(i);
                     plane.score += 5;
                     Loader.playAudio("xu.wav");
                 }
             }
         }
-        for (int i = arrBullet.size() - 1; i >= 0; i--) {                                                               //Xoá đạn ngoài tầm
+        for (int i = arrBullet.size() - 1; i >= 0; i--) {                                                               // Remove bullet outside viewable
             boolean check = arrBullet.get(i).move();
             if (check == true) {
                 arrBullet.remove(i);
